@@ -2,7 +2,7 @@
 //  main.cpp
 //  cpp-matrix-threadpool
 //
-//  Created by Sofiane Medhouny Laouina on 15/02/2026.
+//  Created by MEDLAO on 15/02/2026.
 //
 
 #include <iostream>
