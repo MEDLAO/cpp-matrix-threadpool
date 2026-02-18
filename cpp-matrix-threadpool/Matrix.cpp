@@ -6,3 +6,18 @@
 //
 
 #include "Matrix.hpp"
+
+
+Matrix::Matrix(int r, int c) {
+    rows = r;
+    columns = c;
+    data.resize(r * c);
+}
+
+int Matrix::getRows() const {
+    return rows;
+}
+
+int Matrix::getColumns() const {
+    return columns;
+}
