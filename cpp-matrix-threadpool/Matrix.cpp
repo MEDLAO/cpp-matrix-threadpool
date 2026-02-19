@@ -21,3 +21,13 @@ int Matrix::getRows() const {
 int Matrix::getColumns() const {
     return columns;
 }
+
+double& Matrix::accessMatrix(int row, int col) {
+    int index = row * columns + col;
+    return data[index];
+}
+
+double Matrix::accessMatrix(int row, int col) const {
+    int index = row * columns + col;
+    return data[index];
+}

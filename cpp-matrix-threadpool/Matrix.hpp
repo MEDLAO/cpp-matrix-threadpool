@@ -23,6 +23,9 @@ public:
     int getRows() const;
     int getColumns() const;
     
+    double& accessMatrix(int row, int col);  // for modifying
+    double accessMatrix(int row, int col) const; // for reading
+    
 };
 
 #endif /* Matrix_hpp */
