@@ -9,5 +9,8 @@
 #define matmul_baseline_hpp
 
 #include <stdio.h>
+#include "Matrix.hpp"
+
+Matrix multiply(const Matrix& A, const Matrix& B);
 
 #endif /* matmul_baseline_hpp */
