@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BFD079B52F420B2D004EEA36 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFD079B42F420B2D004EEA36 /* main.cpp */; };
 		BFD079BD2F44FC0F004EEA36 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFD079BB2F44FC0F004EEA36 /* Matrix.cpp */; };
+		BFD079C02F4A4571004EEA36 /* matmul_baseline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFD079BE2F4A4571004EEA36 /* matmul_baseline.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		BFD079B42F420B2D004EEA36 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BFD079BB2F44FC0F004EEA36 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
 		BFD079BC2F44FC0F004EEA36 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		BFD079BE2F4A4571004EEA36 /* matmul_baseline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matmul_baseline.cpp; sourceTree = "<group>"; };
+		BFD079BF2F4A4571004EEA36 /* matmul_baseline.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matmul_baseline.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 		BFD079B32F420B2D004EEA36 /* cpp-matrix-threadpool */ = {
 			isa = PBXGroup;
 			children = (
+				BFD079BE2F4A4571004EEA36 /* matmul_baseline.cpp */,
+				BFD079BF2F4A4571004EEA36 /* matmul_baseline.hpp */,
 				BFD079B42F420B2D004EEA36 /* main.cpp */,
 				BFD079BB2F44FC0F004EEA36 /* Matrix.cpp */,
 				BFD079BC2F44FC0F004EEA36 /* Matrix.hpp */,
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD079C02F4A4571004EEA36 /* matmul_baseline.cpp in Sources */,
 				BFD079BD2F44FC0F004EEA36 /* Matrix.cpp in Sources */,
 				BFD079B52F420B2D004EEA36 /* main.cpp in Sources */,
 			);
