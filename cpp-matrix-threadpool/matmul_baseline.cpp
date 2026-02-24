@@ -8,6 +8,10 @@
 #include "matmul_baseline.hpp"
 
 Matrix multiply(const Matrix& A, const Matrix& B) {
+    if (A.getColumns() != B.getRows()) {
+        throw std::invalid_argument("A.getColumns() must be equal to B.getRows()");
+    }
+    
     int n = A.getColumns();
     Matrix C(A.getRows(), B.getColumns());
     for (int i = 0; i < A.getRows(); i++) {
