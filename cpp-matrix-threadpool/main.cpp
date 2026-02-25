@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <chrono>
 #include "Matrix.hpp"
 #include "matmul_baseline.hpp"
 
@@ -29,7 +30,7 @@ int main(int argc, const char * argv[]) {
         // B.accessMatrix(0, 0) = 10.0;
         
         // Test multiplication
-        Matrix C(3, 3);
+        Matrix C(3, 2);
         Matrix D(2, 4);
         
         // C first row
@@ -56,8 +57,13 @@ int main(int argc, const char * argv[]) {
         D.accessMatrix(1,2) = 13;
         D.accessMatrix(1,3) = 14;
 
+        auto start = std::chrono::steady_clock::now();
         
         Matrix E = multiply(C, D);
+        
+        auto end = std::chrono::steady_clock::now();
+        
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
         
         for (int i = 0; i < C.getRows(); i++) {
             std::cout << "[ ";
@@ -66,6 +72,8 @@ int main(int argc, const char * argv[]) {
             }
             std::cout << "]" << std::endl;
         }
+        
+        std::cout << "Elapsed time is " << duration.count() << " ms" << std::endl;
         
         std::cout << "cpp-matrix-threadpool project started\n";
     } catch (const std::invalid_argument& e) {
