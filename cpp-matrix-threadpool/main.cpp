@@ -11,6 +11,10 @@
 #include "matmul_baseline.hpp"
 
 
+void benchmark(int N) {
+    // logic here
+}
+
 int main(int argc, const char * argv[]) {
     
     try {
@@ -34,7 +38,7 @@ int main(int argc, const char * argv[]) {
         Matrix D(2, 4);
         
         // C first row
-        C.accessMatrix(0,0) = 1;
+        /*C.accessMatrix(0,0) = 1;
         C.accessMatrix(0,1) = 2;
         
         // C second row
@@ -55,7 +59,7 @@ int main(int argc, const char * argv[]) {
         D.accessMatrix(1,0) = 11;
         D.accessMatrix(1,1) = 12;
         D.accessMatrix(1,2) = 13;
-        D.accessMatrix(1,3) = 14;
+        D.accessMatrix(1,3) = 14;*/
 
         auto start = std::chrono::steady_clock::now();
         
