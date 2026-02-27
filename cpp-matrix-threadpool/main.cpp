@@ -12,7 +12,38 @@
 
 
 void benchmark(int N) {
-    // logic here
+    // create matrices
+    Matrix A(N, N);
+    Matrix B(N, N);
+    
+    // fill
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            A.accessMatrix(i, j) = 1.0;
+            B.accessMatrix(i, j) = 1.0;
+        }
+    }
+    
+    // multiply and measure
+    auto start = std::chrono::steady_clock::now();
+    
+    Matrix C = multiply(A, B);
+    
+    auto end = std::chrono::steady_clock::now();
+    
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    
+    // print
+    std::cout << "Elpased time : N =  " << N << " | " << "time = " << duration.count() << " ms" << std::endl;
+    
+    /*for (int i = 0; i < N; i++) {
+        std::cout << "[ ";
+        for (int j = 0; j < N; j++) {
+            std::cout << C.accessMatrix(i, j) << " ";
+        }
+        std::cout << "]" << std::endl;
+    }*/
+    
 }
 
 int main(int argc, const char * argv[]) {
@@ -20,64 +51,11 @@ int main(int argc, const char * argv[]) {
     try {
         Matrix A(3, 4);
         
-        // Creating the values
-        A.accessMatrix(2, 1) = 1.0;
-        A.accessMatrix(1, 3) = 7.0;
+       
         
-        // Reading the values
-        std::cout << A.accessMatrix(2, 1) << std::endl;
-        std::cout << A.accessMatrix(1, 3) << std::endl;
-        
-        const Matrix B(2, 3);
-        std::cout << B.accessMatrix(0, 0) << std::endl;
-        
-        // B.accessMatrix(0, 0) = 10.0;
-        
-        // Test multiplication
-        Matrix C(3, 2);
-        Matrix D(2, 4);
-        
-        // C first row
-        /*C.accessMatrix(0,0) = 1;
-        C.accessMatrix(0,1) = 2;
-        
-        // C second row
-        C.accessMatrix(1,0) = 3;
-        C.accessMatrix(1,1) = 4;
-
-        // C third row
-        C.accessMatrix(2,0) = 5;
-        C.accessMatrix(2,1) = 6;
-
-        // D first row
-        D.accessMatrix(0,0) = 7;
-        D.accessMatrix(0,1) = 8;
-        D.accessMatrix(0,2) = 9;
-        D.accessMatrix(0,3) = 10;
-
-        // D second row
-        D.accessMatrix(1,0) = 11;
-        D.accessMatrix(1,1) = 12;
-        D.accessMatrix(1,2) = 13;
-        D.accessMatrix(1,3) = 14;*/
-
-        auto start = std::chrono::steady_clock::now();
-        
-        Matrix E = multiply(C, D);
-        
-        auto end = std::chrono::steady_clock::now();
-        
-        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-        
-        for (int i = 0; i < C.getRows(); i++) {
-            std::cout << "[ ";
-            for (int j = 0; j < D.getColumns(); j++) {
-                std::cout << E.accessMatrix(i, j) << " ";
-            }
-            std::cout << "]" << std::endl;
-        }
-        
-        std::cout << "Elapsed time is " << duration.count() << " ms" << std::endl;
+        // const Matrix B(2, 3);
+        // std::cout << B.accessMatrix(0, 0) << std::endl;
+    
         
         std::cout << "cpp-matrix-threadpool project started\n";
     } catch (const std::invalid_argument& e) {
