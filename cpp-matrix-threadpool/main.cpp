@@ -51,7 +51,7 @@ int main(int argc, const char * argv[]) {
     try {
         Matrix A(3, 4);
         
-       
+        benchmark(300);
         
         // const Matrix B(2, 3);
         // std::cout << B.accessMatrix(0, 0) << std::endl;
