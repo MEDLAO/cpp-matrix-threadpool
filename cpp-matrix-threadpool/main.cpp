@@ -46,12 +46,15 @@ void benchmark(int N) {
     
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * arcgv[]) {
     
     try {
         Matrix A(3, 4);
         
         benchmark(300);
+        benchmark(500);
+        benchmark(800);
+        benchmark(1000);
         
         // const Matrix B(2, 3);
         // std::cout << B.accessMatrix(0, 0) << std::endl;
