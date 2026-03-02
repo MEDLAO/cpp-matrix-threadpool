@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF6D0DE02F563E88000A4286 /* ThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF6D0DDE2F563E88000A4286 /* ThreadPool.cpp */; };
 		BFD079B52F420B2D004EEA36 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFD079B42F420B2D004EEA36 /* main.cpp */; };
 		BFD079BD2F44FC0F004EEA36 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFD079BB2F44FC0F004EEA36 /* Matrix.cpp */; };
 		BFD079C02F4A4571004EEA36 /* matmul_baseline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFD079BE2F4A4571004EEA36 /* matmul_baseline.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF6D0DDE2F563E88000A4286 /* ThreadPool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadPool.cpp; sourceTree = "<group>"; };
+		BF6D0DDF2F563E88000A4286 /* ThreadPool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ThreadPool.hpp; sourceTree = "<group>"; };
 		BFD079B12F420B2D004EEA36 /* cpp-matrix-threadpool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cpp-matrix-threadpool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD079B42F420B2D004EEA36 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BFD079BB2F44FC0F004EEA36 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 		BFD079B32F420B2D004EEA36 /* cpp-matrix-threadpool */ = {
 			isa = PBXGroup;
 			children = (
+				BF6D0DDE2F563E88000A4286 /* ThreadPool.cpp */,
+				BF6D0DDF2F563E88000A4286 /* ThreadPool.hpp */,
 				BFD079BE2F4A4571004EEA36 /* matmul_baseline.cpp */,
 				BFD079BF2F4A4571004EEA36 /* matmul_baseline.hpp */,
 				BFD079B42F420B2D004EEA36 /* main.cpp */,
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD079C02F4A4571004EEA36 /* matmul_baseline.cpp in Sources */,
+				BF6D0DE02F563E88000A4286 /* ThreadPool.cpp in Sources */,
 				BFD079BD2F44FC0F004EEA36 /* Matrix.cpp in Sources */,
 				BFD079B52F420B2D004EEA36 /* main.cpp in Sources */,
 			);
