@@ -8,18 +8,23 @@
 #ifndef ThreadPool_hpp
 #define ThreadPool_hpp
 
-#include <stdio.h>
 #include <vector>
 #include <thread>
 #include <queue>
 #include <mutex>
-#include <condition variable>
+#include <condition_variable>
 #include <functional>
 
 class ThreadPool {
 public:
+    ThreadPool(size_t num_treads);
+    ~ThreadPool();
+    
+    void enqueue(std::function<void> task);
     
 private:
-}
+    std::vector<std::thread> workers;
+    std::queue<std::function<void>> tasks;
+};
 
 #endif /* ThreadPool_hpp */
