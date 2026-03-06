@@ -6,3 +6,7 @@
 //
 
 #include "ThreadPool.hpp"
+
+
+ThreadPool::ThreadPool(size_t num_threads) : stop(false)
+{

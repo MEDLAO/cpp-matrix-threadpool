@@ -20,7 +20,7 @@ public:
     ThreadPool(size_t num_treads);
     ~ThreadPool();
     
-    void enqueue(std::function<void> task);
+    void enqueue(std::function<void()> task);
     
 private:
     std::vector<std::thread> workers;
