@@ -10,8 +10,15 @@
 
 ThreadPool::ThreadPool(size_t num_threads) : stop(false)
 {
-    for (size_t i = 0; i < num_threads; ++i)
-    {
+   
+}
 
-    }
+void ThreadPool::enqueue(<#std::function<void ()> task#>)
+{
+    
+}
+
+ThreadPool::~ThreadPool()
+{
+    
 }
