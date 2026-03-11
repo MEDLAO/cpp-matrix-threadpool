@@ -12,8 +12,13 @@ ThreadPool::ThreadPool(size_t num_threads) : stop(false)
 {
     for (size_t i = 0; i < num_threads; ++i)
     {
+        // Create a worker thread and store it in the workers vector
         workers.emplace_back([this]() {
-            
+            while (true) {
+                // Task retrieved from the task queue
+                std::function<void()> task;
+                
+            }
         });
     }
 }
