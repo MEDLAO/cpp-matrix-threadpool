@@ -18,6 +18,8 @@ ThreadPool::ThreadPool(size_t num_threads) : stop(false)
                 // Task retrieved from the task queue
                 std::function<void()> task;
                 
+                // Lock the queue mutex to safely access the shared task queue
+                std::unique_lock<std::mutex> lock(queue_mutex);
             }
         });
     }
