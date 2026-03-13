@@ -20,6 +20,9 @@ ThreadPool::ThreadPool(size_t num_threads) : stop(false)
                 
                 // Lock the queue mutex to safely access the shared task queue
                 std::unique_lock<std::mutex> lock(queue_mutex);
+                
+                // Wait until a task is available in the queue or the thread pool is stopping
+                condition.wait(lock, [this] { return stop || !tasks.empty(); });
             }
         });
     }
