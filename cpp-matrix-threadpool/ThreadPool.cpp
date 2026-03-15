@@ -25,8 +25,11 @@ ThreadPool::ThreadPool(size_t num_threads) : stop(false)
                 condition.wait(lock, [this] { return stop || !tasks.empty(); });
                 
                 // Exit the worker thread if the pool is stopping and no tasks remain
-                   if (stop && tasks.empty())
-                       return;
+                if (stop && tasks.empty())
+                    return;
+                
+                // Retrieve the next task from the queue
+                task = tasks.front();
             }
         });
     }
