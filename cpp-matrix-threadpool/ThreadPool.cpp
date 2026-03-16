@@ -30,6 +30,15 @@ ThreadPool::ThreadPool(size_t num_threads) : stop(false)
                 
                 // Retrieve the next task from the queue
                 task = tasks.front();
+                
+                // Remove the task from the queue
+                tasks.pop();
+                
+                // Release the mutex so other threads can access the task queue while this task executes
+                lock.unlock();
+                
+                // Run the task
+                task();
             }
         });
     }
