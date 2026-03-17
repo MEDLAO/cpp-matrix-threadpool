@@ -44,9 +44,12 @@ ThreadPool::ThreadPool(size_t num_threads) : stop(false)
     }
 }
 
-void ThreadPool::enqueue(<#std::function<void ()> task#>)
+void ThreadPool::enqueue(std::function<void()> task)
 {
+    // Lock the queue to safely add a task
+    std::unique_lock<std::mutex> lock(queue_mutex);
     
+    tasks.push(task);
 }
 
 ThreadPool::~ThreadPool()
