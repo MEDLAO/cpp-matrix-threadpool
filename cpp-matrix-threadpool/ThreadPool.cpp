@@ -50,6 +50,9 @@ void ThreadPool::enqueue(std::function<void()> task)
     std::unique_lock<std::mutex> lock(queue_mutex);
     
     tasks.push(task);
+    
+    // Wake on worker thread to process the new task
+    condition.notify_one();
 }
 
 ThreadPool::~ThreadPool()
