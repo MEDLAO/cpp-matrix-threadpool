@@ -57,5 +57,6 @@ void ThreadPool::enqueue(std::function<void()> task)
 
 ThreadPool::~ThreadPool()
 {
-    
+    // lock the queue to safely update the stop flag
+    std::unique_lock<std::mutex> lock(queue_mutex);
 }
