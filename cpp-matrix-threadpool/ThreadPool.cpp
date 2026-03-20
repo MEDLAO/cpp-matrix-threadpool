@@ -59,4 +59,6 @@ ThreadPool::~ThreadPool()
 {
     // lock the queue to safely update the stop flag
     std::unique_lock<std::mutex> lock(queue_mutex);
+    
+    stop = true; // signal all worker threads to stop processing
 }
