@@ -61,4 +61,8 @@ ThreadPool::~ThreadPool()
     std::unique_lock<std::mutex> lock(queue_mutex);
     
     stop = true; // signal all worker threads to stop processing
+    
+    lock.unlock(); // release the mutex before waking up all worker threads
+    
+    condition.notify_all(); // wake all worker threads so they can exit
 }
