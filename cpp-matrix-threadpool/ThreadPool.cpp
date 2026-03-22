@@ -65,4 +65,8 @@ ThreadPool::~ThreadPool()
     lock.unlock(); // release the mutex before waking up all worker threads
     
     condition.notify_all(); // wake all worker threads so they can exit
+    
+    for (std::thread &worker : workers) {
+        worker.join(); // wait for each worker thread to finish
+    }
 }
