@@ -10,4 +10,6 @@
 
 #include <stdio.h>
 
+Matrix multiply_threadpool(const Matrix& A, const Matrix& B);
+
 #endif /* matmul_threadpool_hpp */
