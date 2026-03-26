@@ -15,7 +15,11 @@ Matrix multiply_threadpool(const Matrix& A, const Matrix& B)
     if (A.getColumns() != B.getRows()) {
         throw std::invalid_argument("A.getColumns() must be equal to B.getRows()");
         
-        Matrix C(A.getRows(), B.getColumns()); // result Matrix
-        
     }
+    
+    Matrix C(A.getRows(), B.getColumns()); // result Matrix
+    
+    int n = A.getColumns(); // shared Dimension
+    
+    ThreadPool pool(4); // create worker threads
 }
