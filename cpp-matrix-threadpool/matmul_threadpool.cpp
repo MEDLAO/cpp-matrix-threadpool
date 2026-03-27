@@ -22,4 +22,8 @@ Matrix multiply_threadpool(const Matrix& A, const Matrix& B)
     int n = A.getColumns(); // shared Dimension
     
     ThreadPool pool(4); // create worker threads
+    
+    for (int i = 0; i < A.getRows(); i++) {
+        <#statements#>
+    }
 }
