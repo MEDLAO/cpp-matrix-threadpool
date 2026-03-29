@@ -27,5 +27,17 @@ Matrix multiply_threadpool(const Matrix& A, const Matrix& B)
         // create a task for row i (capture variables and copy i)
         pool.enqueue([&, i]() {
         });
+        
+        for (int j = 0; j < B.getColumns(); j++)
+        {
+            double sum = 0.0;
+            
+            for (int k = 0; k < n; k++)
+            {
+                sum += A.accessMatrix(i, k) * B.accessMatrix(k, j);
+            }
+            
+            C.accessMatrix(i, j) = sum;
+        }
     }
 }
