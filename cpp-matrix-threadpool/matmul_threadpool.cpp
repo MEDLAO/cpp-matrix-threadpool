@@ -39,5 +39,8 @@ Matrix multiply_threadpool(const Matrix& A, const Matrix& B)
             
             C.accessMatrix(i, j) = sum;
         }
+        
     }
+    
+    return C; // return the computed matrix
 }
