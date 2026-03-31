@@ -9,6 +9,7 @@
 #include <chrono>
 #include "Matrix.hpp"
 #include "matmul_baseline.hpp"
+#include "matmul_threadpool.hpp"
 
 
 void benchmark(int N) {
@@ -27,7 +28,8 @@ void benchmark(int N) {
     // multiply and measure
     auto start = std::chrono::steady_clock::now();
     
-    Matrix C = multiply(A, B);
+//    Matrix C = multiply(A, B);
+    Matrix C = multiply_threadpool(A, B);
     
     auto end = std::chrono::steady_clock::now();
     
