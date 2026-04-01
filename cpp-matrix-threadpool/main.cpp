@@ -28,8 +28,8 @@ void benchmark(int N) {
     // multiply and measure
     auto start = std::chrono::steady_clock::now();
     
-//    Matrix C = multiply(A, B);
-    Matrix C = multiply_threadpool(A, B);
+    Matrix C1 = multiply(A, B); // baseline
+    Matrix C2 = multiply_threadpool(A, B); // parallel
     
     auto end = std::chrono::steady_clock::now();
     
