@@ -28,8 +28,7 @@ void benchmark(int N) {
     // multiply and measure
     auto start = std::chrono::steady_clock::now();
     
-    Matrix C1 = multiply(A, B); // baseline
-    Matrix C2 = multiply_threadpool(A, B); // parallel
+    Matrix C = multiply(A, B);
     
     auto end = std::chrono::steady_clock::now();
     
@@ -51,7 +50,9 @@ void benchmark(int N) {
 int main(int argc, const char * arcgv[]) {
     
     try {
-        Matrix A(3, 4);
+//        Matrix A(3, 4);
+        Matrix A(3, 3);
+        Matrix B(3, 3);
         
         benchmark(300);
         benchmark(500);
@@ -60,6 +61,12 @@ int main(int argc, const char * arcgv[]) {
         
         // const Matrix B(2, 3);
         // std::cout << B.accessMatrix(0, 0) << std::endl;
+        
+        Matrix C1 = multiply(A, B);
+        Matrix C2 = multiply_threadpool(A, B);
+
+        std::cout << C1.accessMatrix(0, 0) << " "
+                  << C2.accessMatrix(0, 0) << std::endl;
     
         
         std::cout << "cpp-matrix-threadpool project started\n";
