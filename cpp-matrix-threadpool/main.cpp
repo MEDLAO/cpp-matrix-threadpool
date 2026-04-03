@@ -54,6 +54,14 @@ int main(int argc, const char * arcgv[]) {
         Matrix A(3, 3);
         Matrix B(3, 3);
         
+        // fill with simple values
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                A.accessMatrix(i, j) = 1.0;
+                B.accessMatrix(i, j) = 1.0;
+            }
+        }
+        
         benchmark(300);
         benchmark(500);
         benchmark(800);
